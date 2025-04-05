@@ -1,0 +1,89 @@
+  {
+    "products": [
+      {
+        "title": "Salicylic Acid Face Wash",
+        "price": 250,
+        "image": "images/products/p1.jpg",
+        "skin_type": "Oily & Combination Skin",
+        "size": "150ml"
+      },
+      {
+        "title": "Hyaluronic Acid Moisturizer",
+        "price": 300,
+        "image": "images/products/p2.jpg",
+        "skin_type": "All Skin Types",
+        "size": "100ml"
+      },
+      {
+        "title": "Vitamin C Brightening Cream",
+        "price": 400,
+        "image": "images/products/p3.jpg",
+        "skin_type": "Normal & Dry Skin",
+        "size": "50ml"
+      },
+      {
+        "title": "Natural Rose Water Toner",
+        "price": 200,
+        "image": "images/products/p4.jpg",
+        "skin_type": "All Skin Types",
+        "size": "120ml"
+      },
+      {
+        "title": "Retinol Anti-Aging Serum",
+        "price": 500,
+        "image": "images/products/p5.jpg",
+        "skin_type": "Mature & Normal Skin",
+        "size": "30ml"
+      },
+      {
+        "title": "Coffee & Sugar Face Scrub",
+        "price": 180,
+        "image": "images/products/p6.jpg",
+        "skin_type": "All Skin Types",
+        "size": "200g"
+      },
+      {
+        "title": "Green Clay Pore Cleansing Mask",
+        "price": 350,
+        "image": "images/products/p7.jpg",
+        "skin_type": "Oily & Combination Skin",
+        "size": "100ml"
+      },
+      {
+        "title": "Sunscreen SPF 50",
+        "price": 450,
+        "image": "images/products/p8.jpg",
+        "skin_type": "All Skin Types",
+        "size": "50ml"
+      },
+      {
+        "title": "Argan Oil Skin Moisturizer",
+        "price": 320,
+        "image": "images/products/p9.jpg",
+        "skin_type": "Dry & Sensitive Skin",
+        "size": "50ml"
+      },
+      {
+        "title": "Soothing Aloe Vera Gel",
+        "price": 220,
+        "image": "images/products/p10.jpg",
+        "skin_type": "Sensitive & Irritated Skin",
+        "size": "200ml"
+      },
+      {
+        "title": "Argan Oil Skin Moisturizer",
+        "price": 320,
+        "image": "images/products/p9.jpg",
+        "skin_type": "Dry & Sensitive Skin",
+        "size": "50ml"
+      },
+      {
+        "title": "Soothing Aloe Vera Gel",
+        "price": 220,
+        "image": "images/products/p10.jpg",
+        "skin_type": "Sensitive & Irritated Skin",
+        "size": "200ml"
+      }
+    ]
+  }
+  
