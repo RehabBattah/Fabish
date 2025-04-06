@@ -162,8 +162,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ======= CARDS ======================
 
-let allItems = [];
 // GET ALL CARDS
+let allItems = [];
 
 function getCardItems() {
   let myHttp = new XMLHttpRequest();
@@ -192,7 +192,7 @@ function getCardItems() {
                     </div>
                 </div>`;
       });
-      popOut();
+      popOut(i);
       
     }
   });
@@ -200,11 +200,9 @@ function getCardItems() {
 getCardItems();
 
 
-// REDIRECT TO CART
 function AddToCart(index,count=1) {
-  console.log("index", index);
-  console.log("count", count);
-  
+  // console.log("index", index);
+  // console.log("count", count);
   console.log(allItems.products[index]);
   const productImage = allItems.products[index].image;
   console.log(productImage);
@@ -237,12 +235,14 @@ function AddToCart(index,count=1) {
 
     ubdateTotalPrice();
 });
-cartcontent.appendChild(cartbox);
+// cartcontent.appendChild(cartbox);
 cartbox.querySelector(".cart-remove").addEventListener("click",()=>{
     cartbox.remove();
 updateCount(-1);
 
 ubdateTotalPrice();
+// cartbox.innerHTML = ``;
+
 });
 cartbox.querySelector(".cart-quantity").addEventListener("click",event=>{
     const numberElement=cartbox.querySelector(".counter");
@@ -309,21 +309,34 @@ buynowbutton.addEventListener("click", () => {
   ubdateTotalPrice();
   alert("Thank You for buying");
 });
+
+
+let currentIndex = null ;
+let count = 1 ;
+document.querySelector(".AddToPopCart").addEventListener("click", function () {
+  if (currentIndex != null) {
+  AddToCart(currentIndex,count) ;
+  document.querySelector("#lightBox-container .counter").textContent = count
+  }
+})
 // CARD DETAILS
-function popOut() {
+function popOut(i) {
+  currentIndex = i;
   let closeBtn = document.querySelectorAll(".close-btn");
   let lightBoxContainer = document.getElementById("lightBox-container");
   let imgCard = document.querySelectorAll(".img-card");
-  let addToPopCart = document.querySelector(".AddToPopCart");
   let minus = document.querySelector(".minus");
   let plus = document.querySelector(".plus");
   let inputCounter = document.querySelector(".counter");
+  count = parseInt(inputCounter.textContent);
+  let oneProduct = [];
 
-  let    count = parseInt(inputCounter.textContent);
   imgCard.forEach((e, i) => {
     e.addEventListener("click", () => {
-      let oneProduct = allItems.products[i];
-      
+      currentIndex = i;
+
+      oneProduct = allItems.products[i];
+
       let img = document.querySelector("#lightBox-container .lightBox-img img");
       img.src = oneProduct.image;
 
@@ -339,21 +352,29 @@ function popOut() {
       let UnitCount = document.querySelector(".lightBox-desc .UnitCount");
       UnitCount.textContent = oneProduct.size;
 
+
+      // inputCounter.textContent = count;
+
       lightBoxContainer.style.display = "flex";
     });
   });
   closeBtn.forEach((e) => {
     e.addEventListener("click", () => {
       lightBoxContainer.style.display = "none";
+      count = 1;
+    inputCounter.textContent = count;
     });
   });
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") {
       lightBoxContainer.style.display = "none";
+      count = 1;
+    inputCounter.textContent = count;
     }
   });
 
   // - & +
+  
   plus.addEventListener("click", function () {
     count++;
     inputCounter.textContent = count;
@@ -365,17 +386,15 @@ function popOut() {
       inputCounter.textContent = count;
     }
   });
-  closeBtn.forEach((btn) => {
-    btn.addEventListener("click", function () {
-      inputCounter.textContent = 1;
-    });
-  });
-  addToPopCart.addEventListener("click", function () {
-    AddToCart(i,count);
-});
+  // closeBtn.forEach((btn) => {
+  //   btn.addEventListener("click", function () {
+  //     inputCounter.textContent = 1;
+  //   });
+  // });
 
 
 }
+
 
 
 var personal_image = document.getElementsByClassName("personal_image")[0];

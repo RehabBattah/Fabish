@@ -18,7 +18,6 @@
     --paragraphColor: #555;
     --black: #000;
 }
-
 .darkmode {
     --btnColor: #9ba06e;
     --mainColor: #ffffff;
@@ -30,28 +29,14 @@
     --background: #000;
     --black: #fff;
 }
-
 body {
     background-color: var(--white);
     color: var(--mainColor);
 }
-
-.txt-center {
-    text-align: center;
-}
-
-h2 {
-    color: var(--mainColor);
-    font-size: 2rem;
-}
-
-.my {
-    margin: 1rem 0;
-}
-
-.bold {
-    font-weight: bold;
-}
+.txt-center {text-align: center;}
+h2 { color: var(--mainColor);  font-size: 2rem;}
+.my { margin: 1rem 0;}
+.bold {font-weight: bold;}
 
 /* Preloader  */
 .preloader {
@@ -59,7 +44,6 @@ h2 {
     top: 0;
     left: 0;
     width: 100%;
-
     height: 100%;
     background-color: #f0f0f0a9;
     display: flex;
@@ -73,7 +57,6 @@ h2 {
     height: auto;
     animation: spin 2s linear infinite;
 }
-
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -83,7 +66,6 @@ h2 {
         transform: rotate(360deg);
     }
 }
-
 .content {
     display: none;
 }
@@ -93,11 +75,15 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #33333300;
     padding: 15px 30px;
     color: var(--white);
-    position: relative;
+    /* position: relative; */
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
     z-index: 1000;
+    background-color: var(--white);
 }
 
 #theme-switch {
@@ -129,29 +115,20 @@ h2 {
     fill: var(--mainColor);
     stroke: var(--mainColor);
 }
-
 .navbar-brand {
     display: flex;
     align-items: center;
 }
-
 .navbar-brand .logo {
     height: 40px;
     width: 100%;
 }
-
 .navbar-brand .logo .colors {
     fill: var(--mainColor)
 }
-
 .logo_final .colors {
     fill: var(--mainColor)
 }
-
-
-
-
-
 
 .navbar-link {
     display: flex;
@@ -184,15 +161,13 @@ h2 {
     padding: 10px;
     z-index: 9999;
     transition: none !important;
-
 }
-
 .navbar-link .dropdown:hover .dropdown-menu {
     display: block;
     top: 100%;
     left: 0;
     color: #f44336 !important;
-}
+} 
 
 #cart-icon {
     position: relative;
@@ -235,171 +210,7 @@ h2 {
     background-color: #d32f2f;
 }
 
-/* cart  */
-.cart {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 360px;
-    height: 100%;
-    background: #f6f6ec;
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-    padding: 65px 20px 40px;
-    z-index: 1005;
-    overflow: auto;
-    transition: .5s;
-}
-
-.cart.active {
-    right: 0;
-}
-
-.cart-title {
-    text-align: center;
-    font-size: 30px;
-}
-
-.cart-box {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.cart-box img {
-    width: 100px;
-    height: 100px;
-    border-radius: 6px;
-    object-fit: cover;
-    margin-right: 20px;
-}
-
-.cart-detail {
-    display: grid;
-    gap: 8px;
-    margin-right: auto;
-}
-
-.cart-product-title {
-    font-size: 16px;
-    line-height: 1;
-}
-
-.cart-price {
-    font-weight: 500;
-}
-
-.cart-quantity {
-    display: flex;
-    width: 100px;
-    border: 1px solid var(--btnColor);
-    border-radius: 6px;
-
-}
-
-.cart-quantity button {
-    background: transparent;
-    width: 30px;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.cart-quantity #decrement {
-    color: var(--btnColor);
-}
-
-.cart-quantity .number {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    border-left: 1px solid var(--btnColor);
-    border-right: 1px solid var(--btnColor);
-    cursor: default;
-}
-
-.cart-remove {
-    font-size: 25px;
-    cursor: pointer;
-}
-
-.total {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    border-top: 1px solid #333;
-    margin-top: 20px;
-    font-size: 18px;
-}
-
-.total-price {
-    margin-left: 10px;
-    font-weight: 600;
-}
-
-.btn-buy {
-    display: block;
-    padding: 10px 30px;
-    background-color: #9ba06e;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 20px auto 0;
-}
-
-#cart-close {
-    position: absolute;
-    top: 20px;
-    right: 15px;
-    font-size: 35px;
-    cursor: pointer;
-}
-
-@media screen and (min-width:300px) and (max-width:480px) {
-    .product-content {
-        grid-template-columns: repeat(auto-fit, minmax(200px));
-    }
-
-    .cart {
-        width: 100%;
-        background-color: #111;
-    }
-}
-
-@media screen and (min-width:360px) and (max-width: 486px) {
-    .navbar {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        width: 100% !important;
-        padding: 15px !important;
-    }
-
-    .navbar-link {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        width: 100% !important;
-    }
-
-    .cart {
-        display: none;
-    }
-
-    .navbar-link .dropdown:hover .dropdown-menu {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-    }
-}
-
-/* slider section */
+/* ======== slider =============  */
 .slider-wraper {
     overflow: hidden;
     display: flex;
@@ -492,7 +303,6 @@ h2 {
     letter-spacing: 1px;
     background-color: var(--btnColor);
     text-align: center;
-    /* text-transform: uppercase; */
     width: 200px;
     padding: 13px 0;
     transition: 0.5s ease;
@@ -613,7 +423,7 @@ h2 {
     }
 }
 
-/* symbols section */
+/* ====== symbols section ================== */
 .symbols-container {
     width: 80%;
     margin: 5rem auto;
@@ -697,8 +507,7 @@ h2 {
     }
 }
 
-
-/* CARDS  */
+/* =========== CARDS ==================== */
 #cards .container {
     width: 80%;
     margin: 2rem auto;
@@ -728,7 +537,6 @@ h2 {
 .cards .img-card img {
     width: 100%;
     border-radius: 10px;
-    /* overflow: hidden; */
     display: block;
 }
 
@@ -877,7 +685,7 @@ h2 {
     }
 }
 
-/* CARD DETAILS  */
+/* ========= CARD DETAILS =================== */
 #lightBox-container {
     background-color: rgba(0, 0, 0, .4);
     position: fixed;
@@ -986,7 +794,6 @@ h2 {
     color: var(--black);
 }
 
-/* #lightBox-container .lightBox-item .close-btn{color: var(--black);} */
 
 @media (max-width:768px) {
     .lightBox-item {
@@ -1033,7 +840,7 @@ h2 {
 }
 
 
-/* Testimonial */
+/* ========= Testimonial ================ */
 .bottom_section {
     height: 80vh;
     display: flex;
@@ -1249,7 +1056,7 @@ h2 {
 }
 
 
-/* cart  */
+/* ======== cart ================== */
 .cart {
     position: fixed;
     top: 0;
